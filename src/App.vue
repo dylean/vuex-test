@@ -1,18 +1,15 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <h1>{{ $store.state.count }}</h1>
+    <h2>{{ $store.getters.doubleCount }}</h2>
+    <button @click="$store.commit('add')">+1</button>
+    <button @click="$store.dispatch('asyncAdd', 2)">async +2</button>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
+  name: 'App'
 }
 </script>
 
